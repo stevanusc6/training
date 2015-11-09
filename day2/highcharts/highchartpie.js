@@ -10,10 +10,10 @@ $(document).ready(function() {
                 type: 'pie'
             },
             title: {
-                text: 'Cadangan Devisa Tahun 2012'
+                text: 'Perbandingan Jumlah Penduduk Berdasarkan Jenis Kelamin'
             },
             tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                pointFormat: '<b>{point.percentage:.1f}%</b>'
             },
             plotOptions: {
                 pie: {
@@ -27,13 +27,13 @@ $(document).ready(function() {
             },
         series: [{
                 type: 'pie',
-                name: 'Browser share',
+               
                 data: []
                 }]
     }
     
     $.getJSON("datahighchartpie.php", function(json) {
-        console.log(json);
+     
         options.series[0].data = json;
       chart = new Highcharts.Chart(options);
     
