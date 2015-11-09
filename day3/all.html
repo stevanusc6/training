@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+        <style>
+            #maps    {
+                width: 650px;
+                height: 550px;
+                margin-left: 5px;
+            }
+            #map-canvas1    {
+                width: 650px;
+                height: 550px;
+                margin-left: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Kompas Litbang Training</h1>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Chart</h2>
+                <div class="row">
+                    <div class="col-md-6" id="chart">
+                        
+                    </div>
+                    <div class="col-md-6" id="chartbar">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" id="chartpie">
+                        
+                    </div>
+                   
+                </div>
+                <h2>Maps</h2>
+                <div class="row">
+                  <div class="col-md-6" id="maps">
+                        
+                    </div>
+                   <div class="col-md-6" id="map-canvas1">
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!--Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!--Google Maps-->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        
+         <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script> 
+        <script src="data/highchart.js"></script>
+        <script src="data/highchartbar.js"></script>
+        <script src="data/highchartpie.js"></script>
+        <script src="markerMap.js"></script>
+        <script src="heatmap.js"></script>
+    </body>
+  
+</html>

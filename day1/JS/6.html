@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            var text = '{"employees":[' +
+                    '{"firstName":"John","lastName":"Doe" },' +
+                    '{"firstName":"Anna","lastName":"Smith" },' +
+                    '{"firstName":"Peter","lastName":"Jones" }]}';
+
+            obj = JSON.parse(text);
+            console.log(obj.employees.length);
+            for (var i = 0; i < obj.employees.length; i++) {
+                console.log(obj.employees[i].firstName + " " + obj.employees[i].lastName);
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

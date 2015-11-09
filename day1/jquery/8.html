@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Contoh Selector jQuery - 02</title> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+        <script type="text/javascript">
+            function function_klik(obj) {
+                $("ul").children().each(function (idx, itm) {
+                    $(itm).html($(itm).html() + ", item ke " + (idx + 1));
+                });
+            }
+            $(document).ready(function () {
+
+                $("#tombolklik").click(function_klik);
+            });
+        </script> 
+    </head>
+    <body>
+
+        <ul id="daftar">Daftar Situs Populer Dunia: 
+            <li><a href="http://www.wikipedia.org">Wikipedia</a></li>
+            <li><a href="http://www.google.com">Google</a></li>
+            <li><a href="http://www.yahoo.com">Yahoo</a></li>
+        </ul> 
+        <button id="tombolklik">Klik Disini</button>
+    </body>	
+</html>

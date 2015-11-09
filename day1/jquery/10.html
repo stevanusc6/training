@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Contoh AJAX</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            function panggilAJAX()
+            {
+                jQuery.ajax("contoh3.txt", {
+                    success: function (data) {
+                        jQuery("#container").html(data);
+                    },
+                    error: function (data) {
+                        jQuery("#container").html("gagal");
+                    }
+                })
+            }
+
+            $(document).ready(function () {
+                $("#tombolklik").bind("click", panggilAJAX);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container" style="background: yellow; width: 200px;">Div dengan id #container !</div>
+        <br />
+        <button id="tombolklik">Klik Disini</button>
+    </body>
+</html>
