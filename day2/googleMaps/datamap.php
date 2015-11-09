@@ -10,14 +10,14 @@
    if(isset($_GET['val'])){
    $con=  mysqli_connect($host, $user, $password, $database) or die("Koneksi Gagal" . mysqli_error());
    
-   $query="SELECT * from tbl_provinsi";
+   $query="SELECT `kode_kabkota`,`nama_kabkota`,`tidak_baca_tulis`,`tidak_berbahasa_indonesia`,`latitude`,`longitude` FROM `tbl_penduduk_buta_aksara` WHERE `nama_kabkota` LIKE '%Bandung%'";
    
    $tmp=  mysqli_query($con, $query);
    while($res=  mysqli_fetch_array($tmp)){
        $dataJSON[]=array(
-           'lat'=>$res[2],
-           'long'=>$res[3],
-           'prov'=>$res[1]
+           'lat'=>$res[4],
+           'long'=>$res[5],
+           'keterangan'=>'<b>' . $res[1] . '</b><br/>Jumlah Tidak Baca Tulis: ' . $res[2] . '<br/>Jumlah Tidak Berbahasa Indonesia: ' . $res[3]
            
        );
    }
