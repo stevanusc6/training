@@ -1,6 +1,8 @@
+var data;
+
 $(document).ready(function() {
     var chart;
-       
+
     var options = {
         chart: {
                 plotBackgroundColor: null,
@@ -31,15 +33,11 @@ $(document).ready(function() {
                 data: []
                 }]
     }
-    
+
     $.getJSON("datahighchartpie.php", function(json) {
      
         options.series[0].data = json;
+        data = json;
       chart = new Highcharts.Chart(options);
-    
-
-        
     });
-    
-   
 });
