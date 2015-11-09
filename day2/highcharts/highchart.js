@@ -25,11 +25,14 @@ $(document).ready(function () {
             hideDuration: 100
         },
         xAxis: {
+            title:{
+                text: 'Tahun'
+            },
             categories: []
         },
         yAxis: {
             title: {
-                text: 'Values'
+                text: 'Jiwa'
             },
             plotLines: [{
                     value: 0,
