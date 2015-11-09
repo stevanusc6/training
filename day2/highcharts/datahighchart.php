@@ -3,12 +3,18 @@
    $password="";
    $user="root";
    $database="training";
-   
+
    $con=  mysqli_connect($host, $user, $password, $database) or die("Koneksi Gagal" . mysqli_error());
 
-  
 
-$query ="SELECT `Jumlah_Penduduk`,`Rataan_Kepadatan_Penduduk`,`Tahun` FROM `tbl_jumlah_penduduk_bandung`";
+
+$query ="SELECT `Jumlah_Penduduk`,`Rataan_Kepadatan_Penduduk`,`Tahun` FROM `tbl_jumlah_penduduk_bandung` ";
+
+if (isset($_GET['tahun_mulai']) || isset($_GET['tahun_akhir'])) {
+    $start = $_GET['tahun_mulai'];
+    $end = $_GET['tahun_akhir'];
+    $query .= "WHERE `Tahun` >= $start && `Tahun` <= $end ";
+}
 
 $tmp=mysqli_query($con,$query);
 
