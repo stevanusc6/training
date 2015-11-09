@@ -1,3 +1,6 @@
+var data;
+var range;
+
 $(document).ready(function () {
     var chart;
 
@@ -78,8 +81,42 @@ $(document).ready(function () {
         }
 
         //chart.hideLoading();
-
+        data = json;
     });
 
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 2010,
+        max: 2020,
+        values: [ 2010, 2020 ],
+        slide: function( event, ui ) {
+            $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        }
+    });
+    $( "#amount" ).val( "Tahun: " + $( "#slider-range" ).slider( "values", 0 ) +
+    " - " + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#slider-range" ).on("slidestop", function (e, ui) {
+        range = {
+            start: $( "#slider-range" ).slider( "values", 0 ),
+            end: $( "#slider-range" ).slider( "values", 1 )
+        };
 
+        $.getJSON("datahighchart.php?tahun_mulai=" + range.start + "&tahun_akhir=" + range.end, function (json) {
+
+            //chart.showLoading();
+            options.xAxis.categories = json[0]['data'];
+            options.series[0] = json[1];
+            options.series[1] = json[2];
+    //        options.series[2] = json[3];
+            if (!json) {
+                console.log('false');
+            } else {
+                console.log('true');
+                chart = new Highcharts.Chart(options);
+            }
+
+            //chart.hideLoading();
+            data = json;
+        });
+    });
 });
